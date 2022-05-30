@@ -1,0 +1,10 @@
+mat-toolbar{
+    background-color: greenyellow;
+    padding: 10px;
+    height: auto;
+}
+
+h1{
+    color:blue;
+    font-size: 3em;
+}

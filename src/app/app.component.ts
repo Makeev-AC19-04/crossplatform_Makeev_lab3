@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Makeev_lab3';
+
+  opened = false;
+
+  public sidenav!: MatDrawer; 
+
+  public setSidenav (sidenav: MatDrawer) {
+    this.sidenav = sidenav;
+  };  
 }
