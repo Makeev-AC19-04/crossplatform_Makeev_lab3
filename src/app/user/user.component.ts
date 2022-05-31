@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor()//private as: AuthService) { }
+  public role = 'Гость';
+  login(login:string, password: string){
 
+  }
   ngOnInit(): void {
   }
 
