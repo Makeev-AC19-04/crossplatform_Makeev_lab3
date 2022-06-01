@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, EventEmitter, Output  } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 
 @Component({
@@ -15,27 +15,50 @@ export class DoctorsComponent implements OnInit {
   public ChangeX(){
     this.x=10;
   }
-  public doctor = {id:1,
-    name:"Константинова Ольга Алексеевна",
-    specialityId:3,"speciality":null};
-  public ChangeName(event: any){
-    this.doctor.name=event.target.value;
+  public doctorname = 'some name';
+  public doctor;
+  public ChangeName(name: string){
+    this.doctor.name=name  //event.target.value;
   }
-  // private _doctorService;
-  // constructor(private _http: HttpClient) { }
-  // public doctors;
+  
+  @Output() 
+  addEvent = new EventEmitter();
+  
+  //private _doctorService;
+  constructor() { //doctorService: DoctorService
+    
+    //setTimeout(() => {
+      this.doctor =  { name: 'NiceName' };
+     // this.doctorname = 'Some name';
+                    // {id:1,
+                    // name:"Константинова Ольга Алексеевна",
+                    // specialityId:3,"speciality":null};
+      //this.name = { name: 'NiceName'};
+       //this._doctorService = doctorService;
+     //}, 2000);
+ 
+   }
 
-  // constructor(doctorService: DoctorService){
-  //   this._doctorService = doctorService;
-  // }
+   Changedctrname(text: string){
+    console.log(text)
+   }
+
+   onAdd(){
+     this.addEvent.emit();
+   }
+
+   onChangeName(text: string){
+    //this.ChangeName.emit(text); 
+    //console.log(text)
+   }
 
   public getAllDoctors(){
     //return this._http.get('https://localhost:2007/doctors/');
   }
 
   ngOnInit(): void {
-    //this.doctors = this._doctorService.getAllDoctors();
-    //this.getAllDoctors.subscribe();
+    //this.doctor = this._doctorService.getAllDoctors();
+   // this.getAllDoctors.subscribe();
   }
 
 }

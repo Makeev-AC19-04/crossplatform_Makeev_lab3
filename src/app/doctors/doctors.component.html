@@ -1,2 +1,7 @@
 <p (click)="ChangeX()">doctors works! {{'Врач '+ doctor.name + x}}</p>
-<input type="text" (input)="ChangeName($event)">
+{{doctorname}}
+<input type="text" #newname>
+<button (click)="ChangeName(newname.value)">ChangeName</button>
+<button (click)="Changedctrname(newname.value)">ChangeDctrname</button>
+<!--<button (click)="changeDctrname(newname.value)">ChangeDctrName</button>-->
+<app-doctor-card (newnameevent)="onChangeName(newname.value)"></app-doctor-card>

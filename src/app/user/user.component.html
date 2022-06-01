@@ -1,1 +1,37 @@
-<p>user works!</p>
+<div align="center">
+    <h1>Авторизация</h1>
+<form #f="ngForm" (ngSubmit)="Login(f.value)">
+<mat-form-field floatLabel="never" 
+                appearance="fill" 
+                color="secondary">
+    <mat-label>Логин</mat-label>
+    <input matInput type="text"
+    placeholder="User Name"
+    ngModel name="login" #un="ngModel"
+    required
+    (input)="ResetMsg()"
+>
+</mat-form-field>    
+<p>
+<mat-form-field floatLabel="never" appearance="fill" color="secondary">
+    <mat-label>Пароль</mat-label>
+    <input matInput type="password"
+    placeholder="Password"
+    ngModel name="password" #pwd="ngModel"
+    required
+    (input)="ResetMsg()"
+>
+</mat-form-field>  
+</p>
+<button mat-raised-button 
+type="submit"
+[disabled]="f.invalid"
+>Log In
+</button>
+<br>
+<br>
+<br>
+<br>
+</form>
+<h1>Ваша роль: {{role}}</h1>
+</div>
