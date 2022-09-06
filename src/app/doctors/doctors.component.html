@@ -5,3 +5,7 @@
 <button (click)="Changedctrname(newname.value)">ChangeDctrname</button>
 <!--<button (click)="changeDctrname(newname.value)">ChangeDctrName</button>-->
 <app-doctor-card (newnameevent)="onChangeName(newname.value)"></app-doctor-card>
+<app-data-table></app-data-table>
+<div align="center">
+    <button mat-raised-button color="primary" (click)="getAllDoctors()">Доктора</button>
+</div>

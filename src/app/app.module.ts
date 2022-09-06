@@ -16,17 +16,22 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
 //import { JwtModule } from '@auth0/ng-jwt';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { DoctorService } from './doctor.service';
 import { DoctorCardComponent } from './doctors/doctor-card/doctor-card.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { AUTH_API_URL } from './app-injection-token';
 import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ACCESS_TOKEN_KEY } from './services/auth.service';
 import { InterceptorService } from './services/interceptor.service';
+import { MatTableModule } from '@angular/material/table';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 export function tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -48,6 +53,7 @@ export function tokenGetter(){
     SidenavComponent,
     DoctorsComponent,
     DoctorCardComponent,
+    DataTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +67,10 @@ export function tokenGetter(){
     FormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatTabsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   providers: [ DoctorService,
         {

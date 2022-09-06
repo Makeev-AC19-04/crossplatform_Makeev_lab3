@@ -25,12 +25,18 @@ export class UserComponent implements OnInit {
         {
           this.msg = "Success";
           this.as.sendTestRequest();
+          //this.as.sendRoleRequest();
         }
         else if (status==401)
           this.msg = "Wrong login/password";
         else
           this.msg = `Something went wrong (${status})`;
       });
+ }
+
+ public SendRole(){
+   //alert("Send role вызван");
+   this.as.sendRoleRequest();
  }
 
   ngOnInit(): void {

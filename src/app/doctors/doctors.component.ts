@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, OnInit, EventEmitter, Output  } from '@angular/core';
 import { DoctorService } from '../doctor.service';
+import { DataTableComponent } from '../data-table/data-table.component';
 
 @Component({
   selector: 'app-doctors',
@@ -43,6 +44,12 @@ export class DoctorsComponent implements OnInit {
     console.log(text)
    }
 
+
+   getAllDoctors(){
+    console.log("Get doctors clicked");
+    //this._http.get('https://localhost:2007/doctors/');
+  }
+
    onAdd(){
      this.addEvent.emit();
    }
@@ -51,10 +58,6 @@ export class DoctorsComponent implements OnInit {
     //this.ChangeName.emit(text); 
     //console.log(text)
    }
-
-  public getAllDoctors(){
-    //return this._http.get('https://localhost:2007/doctors/');
-  }
 
   ngOnInit(): void {
     //this.doctor = this._doctorService.getAllDoctors();

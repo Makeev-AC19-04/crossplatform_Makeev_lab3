@@ -1,14 +1,11 @@
 <!--<img scr="assets/img/site-logo.svg">-->
-<mat-toolbar>
-    <!--button type="button" mat-button (click)=toggleSidenav()-->    
-        <!--svg width="100" height="100" xmlns="https://cdn.worldvectorlogo.com/logos/salesforce-service-cloud.svg">
-            <-circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-        </svg-->
-        <img src="https://cdn.worldvectorlogo.com/logos/salesforce-service-cloud.svg" width="100" height="100">
-    <h1>{{title}}</h1>
-    <button mat-raised-button color="primary" align = "end" routerLink="home">Домой</button>
-    <button mat-raised-button color="primary" align = "end" routerLink="user">Войти</button>
-    <button mat-raised-button color="primary" align = "end" routerLink="doctors">Доктора</button>
-
-
+<mat-toolbar color="primary" class="navbar">
+    <div>
+        <img src="https://cdn.worldvectorlogo.com/logos/salesforce-service-cloud.svg" width="50" height="50">
+        {{title}}</div>
+    <div>
+        <span routerLink="home">Домой</span>
+        <span routerLink="user">Войти</span>
+        <span routerLink="doctors">Доктора</span>
+    </div>
 </mat-toolbar>

@@ -11,9 +11,10 @@ export class InterceptorService {
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let headers = req.headers;
-    if (req.url=="doctors")
+    if (req.url=="values/getrole")
     {
       const token = localStorage.getItem('token');
+      //alert("Token: " + token);
       headers = headers.append('Authorization', `Bearer ${token}`);
     }
     const request = req.clone({
